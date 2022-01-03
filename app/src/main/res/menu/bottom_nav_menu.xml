@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_assistant"
+        android:icon="@drawable/ic_baseline_assistant_24"
+        android:title="@string/assistant"/>
+
+    <item
+        android:id="@+id/navigation_apps"
+        android:icon="@drawable/ic_baseline_apps_24"
+        android:title="@string/apps"/>
+
+    <item
+        android:id="@+id/navigation_rewards"
+        android:icon="@drawable/ic_baseline_card_giftcard_24"
+        android:title="@string/rewards"/>
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="@string/profile"/>
+
+</menu>

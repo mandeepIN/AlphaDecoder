@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">AlphaDecoder</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="assistant">Assistant</string>
+    <string name="apps">Apps</string>
+    <string name="profile">Profile</string>
+    <string name="rewards">Rewards</string>
+    <string name="details">Details</string>
+    <string name="redeem_reward">Redeem Reward</string>
+    <string name="image_url">https://meichsteadt.github.io/corgiGame/img/birthday-corgi.jpg</string>
+    <string name="family_security_and_accessibility">Family Security and Accessibility</string>
+    <string name="preferences">Preferences</string>
+    <string name="my_apps">My Apps</string>
+    <string name="search_for_apps">Search for Apps</string>
+</resources>

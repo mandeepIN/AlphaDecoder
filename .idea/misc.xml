@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.35885416666666664" />
+        <entry key="app/src/main/res/drawable/download_bg.xml" value="0.35989583333333336" />
+        <entry key="app/src/main/res/drawable/ic_download.xml" value="0.35989583333333336" />
+        <entry key="app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.35989583333333336" />
+        <entry key="app/src/main/res/drawable/ic_right.xml" value="0.35989583333333336" />
+        <entry key="app/src/main/res/drawable/reward_details.xml" value="0.35989583333333336" />
+        <entry key="app/src/main/res/drawable/reward_details_bg.xml" value="0.35989583333333336" />
+        <entry key="app/src/main/res/drawable/reward_redeem_bg.xml" value="0.35989583333333336" />
+        <entry key="app/src/main/res/drawable/search_field_bg.xml" value="0.35989583333333336" />
+        <entry key="app/src/main/res/drawable/uninstall_bg.xml" value="0.35989583333333336" />
+        <entry key="app/src/main/res/layout/activity_family_security.xml" value="0.34375" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.32864583333333336" />
+        <entry key="app/src/main/res/layout/fragment_assistant.xml" value="0.34375" />
+        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.34375" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.34375" />
+        <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.34375" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.34375" />
+        <entry key="app/src/main/res/layout/item_app_uninstall.xml" value="0.34375" />
+        <entry key="app/src/main/res/layout/item_application.xml" value="0.34375" />
+        <entry key="app/src/main/res/layout/item_collection.xml" value="0.34375" />
+        <entry key="app/src/main/res/layout/item_reward.xml" value="0.34375" />
+        <entry key="app/src/main/res/layout/rewards_fragment.xml" value="0.34375" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.34375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
