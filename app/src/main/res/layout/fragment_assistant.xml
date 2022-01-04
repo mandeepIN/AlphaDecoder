@@ -12,6 +12,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageView
+            android:id="@+id/languageSelectorIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_baseline_language_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,7 +37,7 @@
             android:id="@+id/micIV"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_marginBottom="48dp"
+            android:layout_marginBottom="68dp"
             android:elevation="4dp"
             android:src="@drawable/ic_mic"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -43,6 +55,5 @@
             app:lottie_rawRes="@raw/mic" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

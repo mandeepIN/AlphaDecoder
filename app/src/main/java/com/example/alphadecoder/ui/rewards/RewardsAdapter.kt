@@ -38,7 +38,7 @@ class RewardsAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun bind(application: AppDetails) {
             Glide.with(binding.root.context).load(application.image).into(binding.rewardIV)
-            binding.rewardIV.setOnClickListener {
+            binding.textView.setOnClickListener {
                 clickListener(application)
             }
         }

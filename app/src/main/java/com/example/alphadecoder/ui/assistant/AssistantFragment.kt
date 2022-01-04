@@ -19,7 +19,7 @@ class AssistantFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         _binding = FragmentAssistantBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -31,6 +31,9 @@ class AssistantFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.micIV.setOnClickListener {
             binding.lottieMic.playAnimation()
+        }
+        binding.languageSelectorIV.setOnClickListener {
+
         }
     }
 

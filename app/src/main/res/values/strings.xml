@@ -14,4 +14,20 @@
     <string name="preferences">Preferences</string>
     <string name="my_apps">My Apps</string>
     <string name="search_for_apps">Search for Apps</string>
+    <string name="the_app_store_allows_you_to_control_the_apps_installed_in_your_family_s_device_to_get_a_better_control_and_remove_unwanted_apps_that_might_hamper_with_their_smartphone_experience">The app store allows you to control the apps installed in your family\'s device to get a better control and remove unwanted apps that might hamper with their smartphone experience</string>
+    <string-array name="languages"  translatable="false">
+        <item>hi | (Hindi) हिन्दी</item>
+        <item>mr | (Marathi) मराठी</item>
+        <item>bn | (Bangla) বাংলা</item>
+        <item>gu | (Gujarati) ગુજરાતી</item>
+        <item>pa | (Punjabi) ਪੰਜਾਬੀ</item>
+        <item>ur | (Urdu) اردو </item>
+        <item>as | (Assamese) অসাম্যেসে </item>
+        <item>ml | (Malayalam) മലയാളം </item>
+        <item>te | (Telegu) తెలుగు </item>
+        <item>kn | (Kannada) ಕನ್ನಡ </item>
+        <item>ta | (Tamil) தமிழ்</item>
+        <item>or | (Odia) ଓଡ଼ିଆ</item>
+    </string-array>
+
 </resources>

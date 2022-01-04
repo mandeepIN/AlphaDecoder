@@ -6,26 +6,48 @@
     android:layout_height="match_parent"
     tools:context=".ui.familysecurity.FamilySecurityActivity">
 
-    <ImageView
-        android:id="@+id/dropDown"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@color/black"
-        android:clickable="true"
-        android:spinnerMode="dropdown"
-        android:visibility="gone"
+    <TextView
+        android:id="@+id/infoLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:paddingHorizontal="18dp"
+        android:text="@string/the_app_store_allows_you_to_control_the_apps_installed_in_your_family_s_device_to_get_a_better_control_and_remove_unwanted_apps_that_might_hamper_with_their_smartphone_experience"
+        android:textColor="@color/text_color_1"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLyt"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="16dp"
+        android:hint="User"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/infoLabel">
+
+        <AutoCompleteTextView
+            android:id="@+id/filled_exposed_dropdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/appsListRV"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dropDown"
+        app:layout_constraintTop_toBottomOf="@id/textInputLyt"
         tools:listitem="@layout/item_app_uninstall" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
