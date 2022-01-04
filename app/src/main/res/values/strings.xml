@@ -29,5 +29,14 @@
         <item>ta | (Tamil) தமிழ்</item>
         <item>or | (Odia) ଓଡ଼ିଆ</item>
     </string-array>
+    <string name="save">Save</string>
+    <string name="choose_mother_tongue">Choose Mother Tongue</string>
+
+    <!--boat options-->
+    <string name="app_search">App Search</string>
+    <string name="category_search">Category Search</string>
+    <string name="open_app">Open App</string>
+    <string name="uninstall_app">Uninstall App</string>
+    <string name="change_language">Change Language</string>
 
 </resources>

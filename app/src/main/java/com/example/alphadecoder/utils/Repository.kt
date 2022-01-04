@@ -1,12 +1,14 @@
 package com.example.alphadecoder.utils
 
+import android.content.Context
 import com.example.alphadecoder.AppDetails
 import com.example.alphadecoder.AssistantAction
 import com.example.alphadecoder.Collection
+import com.example.alphadecoder.R
 
 object Repository {
 
-    fun getAssistantMessage(): List<AssistantAction> {
+    fun getAssistantMessage(context: Context): List<AssistantAction> {
         return listOf<AssistantAction>(
             AssistantAction(message = "Hello I am your assistant", type = 1),
             AssistantAction(message = "Would you like my help with something ?", type = 1),
@@ -14,11 +16,11 @@ object Repository {
             AssistantAction(
                 type = 2, "",
                 listOf<String>(
-                    "App Search",
-                    "Category Search",
-                    "Open App",
-                    "Uninstall App",
-                    "Change Language"
+                    context.getString(R.string.app_search),
+                    context.getString(R.string.category_search),
+                    context.getString(R.string.open_app),
+                    context.getString(R.string.uninstall_app),
+                    context.getString(R.string.change_language),
                 ),
             )
         )
@@ -60,7 +62,7 @@ object Repository {
         )
     }
 
-    fun getApplications3() : List<AppDetails>{
+    fun getApplications3(): List<AppDetails> {
         return listOf<AppDetails>(
             AppDetails(
                 "Moj Lite",
