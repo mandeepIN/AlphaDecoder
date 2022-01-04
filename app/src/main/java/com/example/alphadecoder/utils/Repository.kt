@@ -8,11 +8,14 @@ import com.example.alphadecoder.R
 
 object Repository {
 
-    fun getAssistantMessage(context: Context): List<AssistantAction> {
-        return listOf<AssistantAction>(
-            AssistantAction(message = "Hello I am your assistant", type = 1),
-            AssistantAction(message = "Would you like my help with something ?", type = 1),
-            AssistantAction(message = "I can help you with following", type = 1),
+    fun getAssistantMessage(context: Context): ArrayList<AssistantAction> {
+        return arrayListOf<AssistantAction>(
+            AssistantAction(
+                message = context.getString(R.string.hello_i_am_your_assistant),
+                type = 1
+            ),
+            AssistantAction(message = context.getString(R.string.need_help), type = 1),
+            AssistantAction(message = context.getString(R.string.i_can_help), type = 1),
             AssistantAction(
                 type = 2, "",
                 listOf<String>(
@@ -22,6 +25,33 @@ object Repository {
                     context.getString(R.string.uninstall_app),
                     context.getString(R.string.change_language),
                 ),
+            )/*,
+            AssistantAction(message = "Show me Amazon Prime" , type = 0),
+            AssistantAction(type = 3 , message = "" , appDetails = AppDetails(
+                "Amazon Prime",
+                "https://im.indiatimes.in/content/2021/Sep/241448122_226907436060727_3612715713474855933_n_613c58ca5e864.jpg?w=725&h=906"
+            ), collection = Collection("" , getApplications3()) ),
+            AssistantAction(message = "Show me Trending Apps" , type = 0),
+            AssistantAction(type = 4 , "" , collection = Collection(
+                "Trending", apps = getApplications2()
+            ))*/
+        )
+    }
+
+    fun getAssistantMessage2(context: Context): ArrayList<AssistantAction> {
+        return arrayListOf<AssistantAction>(
+            AssistantAction(message = "Show me Amazon Prime", type = 0),
+            AssistantAction(
+                type = 3, message = "", appDetails = AppDetails(
+                    "Amazon Prime",
+                    "https://im.indiatimes.in/content/2021/Sep/241448122_226907436060727_3612715713474855933_n_613c58ca5e864.jpg?w=725&h=906"
+                ), collection = Collection("", getApplications3() + getApplications2() + getApplications())
+            ),
+            AssistantAction(message = context.getString(R.string.show_racing_games), type = 0),
+            AssistantAction(
+                type = 4, "", collection = Collection(
+                    context.getString(R.string.racing_games), apps = getApplications2() + getApplications2() + getApplications3()
+                )
             )
         )
     }

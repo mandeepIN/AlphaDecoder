@@ -3,14 +3,14 @@ package com.example.alphadecoder.ui.assistant
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.alphadecoder.AssistantAction
-import com.example.alphadecoder.databinding.ItemFeatureChipsBinding
-import com.example.alphadecoder.databinding.ItemMessageAssistantBinding
-import com.example.alphadecoder.databinding.ItemMessageUserBinding
+import com.example.alphadecoder.databinding.*
+import com.example.alphadecoder.ui.apps.ApplicationAdapter
 import com.google.android.material.chip.Chip
 
 class AssistantAdapter(
-    private val actions: List<AssistantAction>, private val chipClick: (String) -> Unit
+    private val actions: ArrayList<AssistantAction>, private val chipClick: (String) -> Unit
 ) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -52,6 +52,25 @@ class AssistantAdapter(
                     ), chipClick
                 )
             }
+            VIEW_TYPE_APP_DETAILS -> {
+                return AppSearchViewHolder(
+                    ItemAppDetailsMessageBinding.inflate(
+                        LayoutInflater.from(parent.context),
+                        parent,
+                        false
+                    ),
+                    {}
+                )
+            }
+            VIEW_TYPE_CATEGORY_SEARCH -> {
+                return CategoryViewHolder(
+                    ItemCateoryCollectionBinding.inflate(
+                        LayoutInflater.from(parent.context),
+                        parent,
+                        false
+                    )
+                )
+            }
         }
         return FeatureGroupViewHolder(
             ItemFeatureChipsBinding.inflate(
@@ -67,11 +86,18 @@ class AssistantAdapter(
             is AssistantMessageViewHolder -> holder.bind(actions[position])
             is UserMessageViewHolder -> holder.bind(actions[position])
             is FeatureGroupViewHolder -> holder.bind(actions[position])
+            is AppSearchViewHolder -> holder.bind(actions[position])
+            is CategoryViewHolder -> holder.bind(actions[position])
         }
     }
 
     override fun getItemCount(): Int {
         return actions.size
+    }
+
+    fun addData(data: List<AssistantAction>) {
+        actions.addAll(data)
+        notifyItemInserted(actions.size - data.size)
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -109,4 +135,31 @@ class AssistantAdapter(
             }
         }
     }
+
+    class AppSearchViewHolder(
+        private val binding: ItemAppDetailsMessageBinding,
+        private val callback: (String) -> Unit
+    ) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(data: AssistantAction) {
+            with(binding) {
+                Glide.with(root.context).load(data.appDetails?.image).into(appIV)
+                appTV.text = data.appDetails?.name
+                appSizeTV.text = "23MB"
+                data.collection?.let {
+                    apps.adapter = ApplicationAdapter(it.apps, true)
+                }
+            }
+        }
+    }
+
+    class CategoryViewHolder(private val binding: ItemCateoryCollectionBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(data: AssistantAction) {
+            data.collection?.let {
+                binding.collectionHeadTV.text = it.title
+                binding.apps.adapter = ApplicationAdapter(it.apps, true)
+            }
+        }
+    }
+
 }

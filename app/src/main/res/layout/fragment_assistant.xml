@@ -27,9 +27,10 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/assistntRV"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginHorizontal="18dp"
             android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintTop_toBottomOf="@id/languageSelectorIV" />
 
@@ -50,33 +51,36 @@
             android:layout_marginStart="18dp"
             android:background="@drawable/cta_button_big"
             android:padding="15dp"
+            android:inputType="text"
             android:visibility="gone"
+            android:maxLines="1"
+            android:textColor="@color/text_color_1"
             app:layout_constraintBottom_toBottomOf="@id/btnKeyboard"
             app:layout_constraintEnd_toStartOf="@id/btnKeyboard"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/btnKeyboard" />
 
-        <!--   <ImageView
-               android:id="@+id/micIV"
-               android:layout_width="80dp"
-               android:layout_height="80dp"
-               android:layout_marginBottom="68dp"
-               android:elevation="4dp"
-               android:src="@drawable/ic_mic"
-               app:layout_constraintBottom_toBottomOf="parent"
-               app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintStart_toStartOf="parent" />
+        <ImageView
+            android:id="@+id/micIV"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="68dp"
+            android:elevation="4dp"
+            android:src="@drawable/ic_mic"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-           <com.airbnb.lottie.LottieAnimationView
-               android:id="@+id/lottieMic"
-               android:layout_width="220dp"
-               android:layout_height="220dp"
-               app:layout_constraintBottom_toBottomOf="@id/micIV"
-               app:layout_constraintEnd_toEndOf="@id/micIV"
-               app:layout_constraintStart_toStartOf="@id/micIV"
-               app:layout_constraintTop_toTopOf="@id/micIV"
-               app:lottie_rawRes="@raw/mic" />
-   -->
+        <!--<com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieMic"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            app:layout_constraintBottom_toBottomOf="@id/micIV"
+            app:layout_constraintEnd_toEndOf="@id/micIV"
+            app:layout_constraintStart_toStartOf="@id/micIV"
+            app:layout_constraintTop_toTopOf="@id/micIV"
+            app:lottie_rawRes="@raw/mic" />-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

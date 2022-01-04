@@ -32,11 +32,16 @@
     <string name="save">Save</string>
     <string name="choose_mother_tongue">Choose Mother Tongue</string>
 
-    <!--boat options-->
+    <!--bot options-->
     <string name="app_search">App Search</string>
     <string name="category_search">Category Search</string>
     <string name="open_app">Open App</string>
     <string name="uninstall_app">Uninstall App</string>
     <string name="change_language">Change Language</string>
+    <string name="hello_i_am_your_assistant">Hello I am your assistant</string>
+    <string name="need_help">Would you like my help with something ?</string>
+    <string name="i_can_help">I can help you with following</string>
+    <string name="racing_games">Racing Games</string>
+    <string name="show_racing_games">Show me Racing Games</string>
 
 </resources>

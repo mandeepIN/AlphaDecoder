@@ -12,6 +12,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.example.alphadecoder.AssistantAction
 import com.example.alphadecoder.R
 import com.example.alphadecoder.databinding.FragmentAssistantBinding
 import com.example.alphadecoder.utils.Repository
@@ -20,6 +21,7 @@ import com.example.alphadecoder.utils.Repository
 class AssistantFragment : Fragment() {
 
     private var _binding: FragmentAssistantBinding? = null
+    private lateinit var adapter: AssistantAdapter
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -37,8 +39,7 @@ class AssistantFragment : Fragment() {
     ): View {
 
         _binding = FragmentAssistantBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-        return root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -104,8 +105,9 @@ class AssistantFragment : Fragment() {
             }
         })
         binding.languageSelectorIV.setOnClickListener {
-            binding.assistntRV.adapter =
-                AssistantAdapter(Repository.getAssistantMessage(requireContext()), chipClick = {
+            adapter = AssistantAdapter(
+                Repository.getAssistantMessage(requireContext()) as ArrayList<AssistantAction>,
+                chipClick = {
                     when (it) {
                         requireContext().getString(R.string.change_language) -> {
                             activity?.let {
@@ -113,10 +115,12 @@ class AssistantFragment : Fragment() {
                                 it.startActivity(intent)
                             }
                         }
+                        requireContext().getString(R.string.app_search) -> {
+                            adapter.addData(Repository.getAssistantMessage2(requireContext()))
+                        }
                     }
-                    Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
                 })
-
+            binding.assistntRV.adapter = adapter
         }
     }
 

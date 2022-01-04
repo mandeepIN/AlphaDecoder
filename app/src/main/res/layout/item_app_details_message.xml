@@ -6,8 +6,9 @@
     android:layout_marginStart="4dp"
     android:layout_marginTop="14dp"
     android:layout_marginEnd="48dp"
+    android:background="@drawable/sender_message_bg"
     android:paddingHorizontal="16dp"
-    android:paddingVertical="6dp">
+    android:paddingVertical="12dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/appIVCard"
@@ -35,9 +36,12 @@
         android:maxLines="2"
         android:textColor="@color/text_color_1"
         android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/appSizeTV"
         app:layout_constraintEnd_toStartOf="@id/downloadTV"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@id/appIVCard"
-        app:layout_constraintTop_toTopOf="@id/appIVCard" />
+        app:layout_constraintTop_toTopOf="@id/appIVCard"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/appSizeTV"
@@ -46,8 +50,9 @@
         android:layout_marginTop="8dp"
         android:textColor="@color/text_color_1"
         android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/appIVCard"
         app:layout_constraintStart_toStartOf="@id/appTV"
-        app:layout_constraintTop_toBottomOf="@id/appTV" />
+        app:layout_constraintTop_toBottomOf="@+id/appTV" />
 
     <ImageView
         android:id="@+id/downloadTV"
@@ -57,8 +62,19 @@
         android:paddingHorizontal="18dp"
         android:paddingVertical="6dp"
         android:src="@drawable/ic_download"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/appIVCard"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/appIVCard" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/apps"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appIVCard" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

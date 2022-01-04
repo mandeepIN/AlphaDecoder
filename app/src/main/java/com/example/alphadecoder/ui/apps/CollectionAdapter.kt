@@ -26,7 +26,7 @@ class CollectionAdapter(private val collection: List<Collection>) :
 
         fun bind(collection: Collection) {
             binding.collectionHeadTV.text = collection.title
-            binding.collectionRV.adapter = ApplicationAdapter(collection.apps)
+            binding.collectionRV.adapter = ApplicationAdapter(collection.apps , false)
         }
 
     }

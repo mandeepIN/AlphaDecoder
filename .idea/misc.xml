@@ -14,6 +14,7 @@
         <entry key="app/src/main/res/drawable/search_field_bg.xml" value="0.35989583333333336" />
         <entry key="app/src/main/res/drawable/sender_message_bg.xml" value="0.35989583333333336" />
         <entry key="app/src/main/res/drawable/uninstall_bg.xml" value="0.35989583333333336" />
+        <entry key="app/src/main/res/drawable/user_message_bg.xml" value="0.35989583333333336" />
         <entry key="app/src/main/res/layout/activity_family_security.xml" value="0.34375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.32864583333333336" />
         <entry key="app/src/main/res/layout/fragment_assistant.xml" value="0.34375" />
@@ -22,6 +23,7 @@
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.34375" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.34375" />
         <entry key="app/src/main/res/layout/item_app_details.xml" value="0.3384615384615385" />
+        <entry key="app/src/main/res/layout/item_app_details_message.xml" value="0.5" />
         <entry key="app/src/main/res/layout/item_app_uninstall.xml" value="0.34375" />
         <entry key="app/src/main/res/layout/item_application.xml" value="0.34375" />
         <entry key="app/src/main/res/layout/item_cateory_collection.xml" value="0.3384615384615385" />
@@ -32,6 +34,7 @@
         <entry key="app/src/main/res/layout/item_message_assistant.xml" value="0.3384615384615385" />
         <entry key="app/src/main/res/layout/item_message_user.xml" value="0.3384615384615385" />
         <entry key="app/src/main/res/layout/item_reward.xml" value="0.34375" />
+        <entry key="app/src/main/res/layout/item_small_app.xml" value="0.3384615384615385" />
         <entry key="app/src/main/res/layout/rewards_fragment.xml" value="0.34375" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.34375" />
       </map>
