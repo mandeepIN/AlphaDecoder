@@ -1,3 +1,5 @@
 package com.example.alphadecoder
 
-abstract class AssistantMessage()
+data class AssistantMessage(
+    val message: String
+)

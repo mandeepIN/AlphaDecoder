@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.alphadecoder.databinding.FragmentAssistantBinding
+import com.example.alphadecoder.utils.Repository
 
 class AssistantFragment : Fragment() {
 
@@ -23,7 +25,6 @@ class AssistantFragment : Fragment() {
 
         _binding = FragmentAssistantBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
         return root
     }
 
@@ -33,7 +34,10 @@ class AssistantFragment : Fragment() {
             binding.lottieMic.playAnimation()
         }
         binding.languageSelectorIV.setOnClickListener {
-
+            binding.assistntRV.adapter =
+                AssistantAdapter(Repository.getAssistantMessage(), chipClick = {
+                    Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+                })
         }
     }
 

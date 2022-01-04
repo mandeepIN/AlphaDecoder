@@ -1,9 +1,28 @@
 package com.example.alphadecoder.utils
 
 import com.example.alphadecoder.AppDetails
+import com.example.alphadecoder.AssistantAction
 import com.example.alphadecoder.Collection
 
 object Repository {
+
+    fun getAssistantMessage(): List<AssistantAction> {
+        return listOf<AssistantAction>(
+            AssistantAction(message = "Hello I am your assistant", type = 1),
+            AssistantAction(message = "Would you like my help with something ?", type = 1),
+            AssistantAction(message = "I can help you with following", type = 1),
+            AssistantAction(
+                type = 2, "",
+                listOf<String>(
+                    "App Search",
+                    "Category Search",
+                    "Open App",
+                    "Uninstall App",
+                    "Change Language"
+                ),
+            )
+        )
+    }
 
     fun getApplications(): List<AppDetails> {
         return listOf<AppDetails>(

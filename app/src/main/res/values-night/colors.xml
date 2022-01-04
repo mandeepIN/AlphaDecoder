@@ -9,4 +9,5 @@
     <color name="text_color_1">#FFFFFFFF</color>
     <color name="grey">#a5a5a5</color>
     <color name="bg_color">#1e1e1e</color>
+    <color name="chat_bg">#2d2d2d</color>
 </resources>
