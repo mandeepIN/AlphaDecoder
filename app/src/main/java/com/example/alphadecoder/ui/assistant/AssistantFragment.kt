@@ -45,9 +45,7 @@ class AssistantFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        /*    binding.micIV.setOnClickListener {
-                binding.lottieMic.playAnimation()
-            }*/
+
         binding.btnKeyboard.setOnClickListener {
             val editText = binding.messageEdit
             if (assistance_button_state != 2) {
@@ -150,13 +148,31 @@ class AssistantFragment : Fragment() {
                                 it.startActivity(intent)
                             }
                         }
-                        requireContext().getString(R.string.app_search) -> {
-                            adapter.addData(Repository.getAssistantMessage2(requireContext()))
+                        requireContext().getString(R.string.category_search) -> {
+                            adapter.addData( Repository.getCategorySuggestions(requireContext()))
                         }
-                        requireContext().getString(R.string.search_for_apps) -> {
-                            adapter.addData(Repository.getFashionApps())
+                        requireContext().getString(R.string.app_search) -> {
+                            adapter.addData( AssistantAction(
+                                type = 1,
+                                message = "Which app do you want to search?"
+                            ))
                         }
 
+                        requireContext().getString(R.string.cat_games) ->{
+                            adapter.addData(Repository.getGamingApps(requireContext()))
+                        }
+
+                        requireContext().getString(R.string.cat_shopping) ->{
+                            adapter.addData(Repository.getShoppingApps(requireContext()))
+                        }
+
+                        requireContext().getString(R.string.cat_music) ->{
+                            adapter.addData(Repository.getMusicApps(requireContext()))
+                        }
+
+                        requireContext().getString(R.string.cat_finance) ->{
+                            adapter.addData(Repository.getFinanceApps(requireContext()))
+                        }
                     }
                 })
         binding.assistntRV.adapter = adapter
