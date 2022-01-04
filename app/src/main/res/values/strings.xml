@@ -43,5 +43,12 @@
     <string name="i_can_help">I can help you with following</string>
     <string name="racing_games">Racing Games</string>
     <string name="show_racing_games">Show me Racing Games</string>
+    <string name="similar_apps">Similar Apps</string>
+    <string name="rewards_query">What are my rewards ?</string>
+    <string name="clean_space">Clean my unused apps</string>
+    <string name="great_offers">Show me some great offers</string>
+    <string name="pay_bills">Pay Bills</string>
+    <string name="hi_how_can_i_help">Hi , how can I help ?</string>
+
 
 </resources>

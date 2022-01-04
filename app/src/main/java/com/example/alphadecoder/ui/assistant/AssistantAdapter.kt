@@ -34,15 +34,6 @@ class AssistantAdapter(
                     )
                 )
             }
-            VIEW_TYPE_ASSISTANT_MESSAGE -> {
-                return AssistantMessageViewHolder(
-                    ItemMessageAssistantBinding.inflate(
-                        LayoutInflater.from(
-                            parent.context
-                        ), parent, false
-                    )
-                )
-            }
             VIEW_TYPE_FEATURE_LIST -> {
                 return FeatureGroupViewHolder(
                     ItemFeatureChipsBinding.inflate(
@@ -71,14 +62,16 @@ class AssistantAdapter(
                     )
                 )
             }
+            else ->
+                return AssistantMessageViewHolder(
+                    ItemMessageAssistantBinding.inflate(
+                        LayoutInflater.from(
+                            parent.context
+                        ), parent, false
+                    )
+                )
         }
-        return FeatureGroupViewHolder(
-            ItemFeatureChipsBinding.inflate(
-                LayoutInflater.from(
-                    parent.context
-                ), parent, false
-            ), chipClick
-        )
+
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
@@ -98,6 +91,11 @@ class AssistantAdapter(
     fun addData(data: List<AssistantAction>) {
         actions.addAll(data)
         notifyItemInserted(actions.size - data.size)
+    }
+
+    fun addData(data: AssistantAction) {
+        actions.add(data)
+        notifyItemInserted(actions.size - 1)
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -127,7 +125,8 @@ class AssistantAdapter(
             assistantMessage.features.forEach { feature ->
                 Chip(binding.root.context).apply {
                     text = feature
-                    binding.chipGroup.addView(this)
+                    if (binding.chipGroup.childCount != assistantMessage.features.size)
+                        binding.chipGroup.addView(this)
                     this.setOnClickListener {
                         chipCallback(feature)
                     }

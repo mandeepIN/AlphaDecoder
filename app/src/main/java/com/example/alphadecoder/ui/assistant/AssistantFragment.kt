@@ -9,10 +9,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.example.alphadecoder.AppDetails
 import com.example.alphadecoder.AssistantAction
+import com.example.alphadecoder.Collection
 import com.example.alphadecoder.R
 import com.example.alphadecoder.databinding.FragmentAssistantBinding
 import com.example.alphadecoder.utils.Repository
@@ -74,7 +75,42 @@ class AssistantFragment : Fragment() {
                 }
             } else {
                 //send text
-
+                adapter.addData(AssistantAction(type = 0, binding.messageEdit.text.toString()))
+                when {
+                    binding.messageEdit.text.contains("Racing", true) -> {
+                        adapter.addData(
+                            Repository.getRacingGames()
+                        )
+                    }
+                    binding.messageEdit.text.contains("Amazon", true) -> adapter.addData(
+                        AssistantAction(
+                            type = 3,
+                            message = "",
+                            appDetails = AppDetails(
+                                "Amazon",
+                                "https://im.indiatimes.in/content/2021/Sep/241448122_226907436060727_3612715713474855933_n_613c58ca5e864.jpg?w=725&h=906"
+                            ),
+                            collection = Collection(
+                                "",
+                                Repository.getApplications3() + Repository.getApplications2() + Repository.getApplications()
+                            )
+                        )
+                    )
+                    binding.messageEdit.text.contains(
+                        "myntra",
+                        true
+                    ) -> adapter.addData(Repository.getMyntraRecommendation())
+                    binding.messageEdit.text.contains(
+                        "space",
+                        true
+                    ) -> adapter.addData(Repository.getCleanSpaceMessage())
+                    binding.messageEdit.text.contains(
+                        "jacket",
+                        true
+                    ) -> adapter.addData(Repository.getFashionApps())
+                    else -> adapter.addData(Repository.getNoFoundMessage())
+                }
+                binding.messageEdit.text.clear()
             }
         }
         binding.messageEdit.addTextChangedListener(object : TextWatcher {
@@ -104,8 +140,7 @@ class AssistantFragment : Fragment() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
             }
         })
-        binding.languageSelectorIV.setOnClickListener {
-            adapter = AssistantAdapter(
+        adapter = AssistantAdapter(
                 Repository.getAssistantMessage(requireContext()) as ArrayList<AssistantAction>,
                 chipClick = {
                     when (it) {
@@ -118,10 +153,14 @@ class AssistantFragment : Fragment() {
                         requireContext().getString(R.string.app_search) -> {
                             adapter.addData(Repository.getAssistantMessage2(requireContext()))
                         }
+                        requireContext().getString(R.string.search_for_apps) -> {
+                            adapter.addData(Repository.getFashionApps())
+                        }
+
                     }
                 })
-            binding.assistntRV.adapter = adapter
-        }
+        binding.assistntRV.adapter = adapter
+
     }
 
     override fun onDestroyView() {

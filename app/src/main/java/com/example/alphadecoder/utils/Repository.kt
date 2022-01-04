@@ -24,6 +24,10 @@ object Repository {
                     context.getString(R.string.open_app),
                     context.getString(R.string.uninstall_app),
                     context.getString(R.string.change_language),
+                    context.getString(R.string.great_offers),
+                    context.getString(R.string.pay_bills),
+                    context.getString(R.string.clean_space),
+                    context.getString(R.string.rewards_query)
                 ),
             )/*,
             AssistantAction(message = "Show me Amazon Prime" , type = 0),
@@ -38,6 +42,58 @@ object Repository {
         )
     }
 
+    fun getNoFoundMessage(): AssistantAction {
+        return AssistantAction(
+            type = 1,
+            message = "Sorry, I couldn't find anything that matches your search"
+        )
+    }
+
+    fun getCleanSpaceMessage(): ArrayList<AssistantAction> {
+        return arrayListOf(
+            AssistantAction(
+                type = 1,
+                message = "Here are some apps that are not frequently used"
+            ),
+            AssistantAction(
+                type = 4, "", collection = Collection(
+                    "Unused Apps",
+                    apps = getApplications2() + getApplications2() + getApplications3()
+                )
+            )
+        )
+    }
+
+    fun getFashionApps(): ArrayList<AssistantAction> {
+        return arrayListOf(
+            AssistantAction(
+                type = 1,
+                message = "Here are some apps that can help :)"
+            ),
+            AssistantAction(
+                type = 4, "", collection = Collection(
+                    "Fashion",
+                    apps = getApplications2() + getApplications2() + getApplications3()
+                )
+            )
+        )
+    }
+
+    fun getRacingGames(): ArrayList<AssistantAction> {
+        return arrayListOf(
+            AssistantAction(
+                type = 1,
+                message = "Here are some apps that match your search"
+            ),
+            AssistantAction(
+                type = 4, "", collection = Collection(
+                    "Racing Games",
+                    apps = getApplications2() + getApplications2() + getApplications3()
+                )
+            )
+        )
+    }
+
     fun getAssistantMessage2(context: Context): ArrayList<AssistantAction> {
         return arrayListOf<AssistantAction>(
             AssistantAction(message = "Show me Amazon Prime", type = 0),
@@ -45,13 +101,30 @@ object Repository {
                 type = 3, message = "", appDetails = AppDetails(
                     "Amazon Prime",
                     "https://im.indiatimes.in/content/2021/Sep/241448122_226907436060727_3612715713474855933_n_613c58ca5e864.jpg?w=725&h=906"
-                ), collection = Collection("", getApplications3() + getApplications2() + getApplications())
+                ),
+                collection = Collection(
+                    "",
+                    getApplications3() + getApplications2() + getApplications()
+                )
             ),
             AssistantAction(message = context.getString(R.string.show_racing_games), type = 0),
             AssistantAction(
                 type = 4, "", collection = Collection(
-                    context.getString(R.string.racing_games), apps = getApplications2() + getApplications2() + getApplications3()
+                    context.getString(R.string.racing_games),
+                    apps = getApplications2() + getApplications2() + getApplications3()
                 )
+            )
+        )
+    }
+
+    fun getMyntraRecommendation(): ArrayList<AssistantAction> {
+        return arrayListOf<AssistantAction>(
+            AssistantAction(type = 1, message = "Here's what i found"),
+            AssistantAction(
+                type = 3, message = "", appDetails = AppDetails(
+                    "Myntra",
+                    "https://images.news18.com/ibnlive/uploads/2021/01/1611996262_ynt.jpeg?impolicy=website&width=510&height=356"
+                ), collection = Collection("", getApplications3() + getApplications())
             )
         )
     }

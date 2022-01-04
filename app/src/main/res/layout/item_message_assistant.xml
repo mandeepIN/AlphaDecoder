@@ -7,14 +7,16 @@
     android:layout_marginStart="4dp"
     android:layout_marginEnd="42dp"
     android:layout_marginTop="8dp"
-    android:background="@drawable/sender_message_bg"
-    android:paddingHorizontal="18dp"
     android:paddingVertical="8dp">
 
     <TextView
         android:id="@+id/userMessageTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/sender_message_bg"
+        android:paddingHorizontal="18dp"
+        android:paddingVertical="6dp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Hello there" />

@@ -12,27 +12,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/languageSelectorIV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="24dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:padding="8dp"
-            android:src="@drawable/ic_baseline_language_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/assistntRV"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginHorizontal="18dp"
             android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintBottom_toTopOf="@id/messageEdit"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintTop_toBottomOf="@id/languageSelectorIV" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btnKeyboard"
@@ -44,7 +35,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <EditText
+        <!--<EditText
             android:id="@+id/messageEdit"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -55,6 +46,22 @@
             android:visibility="gone"
             android:maxLines="1"
             android:textColor="@color/text_color_1"
+            app:layout_constraintBottom_toBottomOf="@id/btnKeyboard"
+            app:layout_constraintEnd_toStartOf="@id/btnKeyboard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnKeyboard" />-->
+
+        <EditText
+            android:id="@+id/messageEdit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:background="@drawable/search_field_bg"
+            android:hint="@string/hi_how_can_i_help"
+            android:maxLines="1"
+            android:padding="8dp"
+            android:paddingVertical="16dp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@id/btnKeyboard"
             app:layout_constraintEnd_toStartOf="@id/btnKeyboard"
             app:layout_constraintStart_toStartOf="parent"
