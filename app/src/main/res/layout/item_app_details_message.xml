@@ -21,8 +21,8 @@
 
         <ImageView
             android:id="@+id/appIV"
-            android:layout_width="72dp"
-            android:layout_height="72dp"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
             android:scaleType="fitXY" />
 
     </androidx.cardview.widget.CardView>
@@ -37,12 +37,9 @@
         android:maxLines="2"
         android:textColor="@color/text_color_1"
         android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/appSizeTV"
         app:layout_constraintEnd_toStartOf="@id/downloadTV"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@id/appIVCard"
-        app:layout_constraintTop_toTopOf="@id/appIVCard"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintTop_toTopOf="@id/appIVCard" />
 
     <TextView
         android:id="@+id/appSizeTV"
@@ -51,9 +48,18 @@
         android:layout_marginTop="8dp"
         android:textColor="@color/text_color_1"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@id/appIVCard"
         app:layout_constraintStart_toStartOf="@id/appTV"
         app:layout_constraintTop_toBottomOf="@+id/appTV" />
+
+    <TextView
+        android:id="@+id/appRatingTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="4.6"
+        android:textColor="@color/gold_yellow"
+        app:layout_constraintStart_toStartOf="@id/appSizeTV"
+        app:layout_constraintTop_toBottomOf="@id/appSizeTV"/>
 
     <ImageView
         android:id="@+id/downloadTV"

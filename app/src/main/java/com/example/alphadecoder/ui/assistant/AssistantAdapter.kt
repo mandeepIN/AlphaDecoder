@@ -1,6 +1,7 @@
 package com.example.alphadecoder.ui.assistant
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -155,10 +156,20 @@ class AssistantAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun bind(data: AssistantAction) {
             data.collection?.let {
-                binding.collectionHeadTV.text = it.title
+                if (it.title.isEmpty())
+                    binding.collectionHeadTV.visibility = View.GONE else
+                    binding.collectionHeadTV.text = it.title
                 binding.apps.adapter = ApplicationAdapter(it.apps, true)
             }
         }
     }
+
+    /*class UnusedAppsCollection(private val binding : ItemSmallAppRemoveBinding) : RecyclerView.ViewHolder(binding.root){
+        fun bind(data : AssistantAction){
+            data.collection?.let {
+                binding.
+            }
+        }
+    }*/
 
 }

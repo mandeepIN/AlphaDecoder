@@ -10,7 +10,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/assistant_chat_bg">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/assistntRV"
@@ -29,29 +30,31 @@
             android:id="@+id/btnKeyboard"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="18dp"
-            android:layout_marginBottom="18dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginBottom="14dp"
             android:src="@drawable/ic_keyboard"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <!--<EditText
+        <EditText
             android:id="@+id/messageEdit"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginStart="18dp"
+            android:layout_marginStart="14dp"
             android:background="@drawable/cta_button_big"
             android:padding="15dp"
             android:inputType="text"
-            android:visibility="gone"
+            android:hint="@string/hi_how_can_i_help"
             android:maxLines="1"
-            android:textColor="@color/text_color_1"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint_color"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="@id/btnKeyboard"
             app:layout_constraintEnd_toStartOf="@id/btnKeyboard"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/btnKeyboard" />-->
+            app:layout_constraintTop_toTopOf="@id/btnKeyboard" />
 
-        <EditText
+        <!--<EditText
             android:id="@+id/messageEdit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -59,13 +62,15 @@
             android:background="@drawable/search_field_bg"
             android:hint="@string/hi_how_can_i_help"
             android:maxLines="1"
-            android:padding="8dp"
-            android:paddingVertical="16dp"
+            android:padding="10dp"
+            android:paddingVertical="18sp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/chat_bg"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@id/btnKeyboard"
             app:layout_constraintEnd_toStartOf="@id/btnKeyboard"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/btnKeyboard" />
+            app:layout_constraintTop_toTopOf="@id/btnKeyboard" />-->
 
         <ImageView
             android:id="@+id/micIV"

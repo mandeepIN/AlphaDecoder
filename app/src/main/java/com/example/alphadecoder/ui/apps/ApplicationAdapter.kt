@@ -1,6 +1,7 @@
 package com.example.alphadecoder.ui.apps
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -63,6 +64,13 @@ class ApplicationAdapter(
     class SmallAppViewHolder(val binding: ItemSmallAppBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(app: AppDetails) {
+            if (app.size.isNotEmpty())
+                binding.appSizeTV.apply {
+                    text = app.size
+                    visibility = View.VISIBLE
+                    binding.downloadIV.visibility = View.GONE
+                }
+            binding.nameTV.text = app.name
             Glide.with(binding.root.context).load(app.image).into(binding.appIV)
         }
     }

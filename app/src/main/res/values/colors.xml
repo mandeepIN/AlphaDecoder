@@ -5,15 +5,18 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="text_color_1">#FF000000</color>
+    <color name="text_color_1">#000</color>
     <color name="text_color_2">#FFFFFFFF</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#a5a5a5</color>
     <color name="bg_color">#ffffff</color>
-    <color name="chat_bg">#eee</color>
+    <color name="chat_bg">#fff</color>
+    <color name="hint_color">#777</color>
     <color name="language_selected_color">#3a7cec</color>
     <color name="language_list_text_color">#191919</color>
     <color name="app_bg">#ffffff</color>
     <color name="divider_color">#e5e5e5</color>
+    <color name="gold_yellow">#ffd155</color>
+    <color name="assistant_chat_bg">#5cb8c2</color>
 </resources>

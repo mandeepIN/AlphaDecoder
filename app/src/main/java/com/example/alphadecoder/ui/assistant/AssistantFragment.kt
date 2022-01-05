@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.alphadecoder.AppDetails
@@ -105,10 +106,39 @@ class AssistantFragment : Fragment() {
                     binding.messageEdit.text.contains(
                         "jacket",
                         true
-                    ) -> adapter.addData(Repository.getFashionApps())
+                    ) -> adapter.addData(Repository.getShoppingApps(requireContext()))
+                    binding.messageEdit.text.contains("download", true) -> {
+                        adapter.addData(Repository.startDownload())
+                    }
+                    binding.messageEdit.text.contains("top gaming", true) -> {
+                        adapter.addData(Repository.getTopGaming())
+                    }
+                    binding.messageEdit.text.contains("top apps", true) -> {
+                        adapter.addData(Repository.getTopAppsMessage())
+                    }
+                    binding.messageEdit.text.contains("open" , true) ->{
+                        adapter.addData(AssistantAction(1 , "Opening Myntra"))
+                        Toast.makeText(requireContext(), "Open Myntra", Toast.LENGTH_SHORT).show()
+                    }
+                    binding.messageEdit.text.contains(
+                        getString(R.string.change_language),
+                        true
+                    ) -> {
+                        adapter.addData(
+                            AssistantAction(
+                                1,
+                                message = "Choose your preferred language"
+                            )
+                        )
+                        activity?.let {
+                            val intent = Intent(it, LanguageSelectionActivity::class.java)
+                            it.startActivity(intent)
+                        }
+                    }
                     else -> adapter.addData(Repository.getNoFoundMessage())
                 }
                 binding.messageEdit.text.clear()
+                binding.assistntRV.smoothScrollToPosition(adapter.itemCount)
             }
         }
         binding.messageEdit.addTextChangedListener(object : TextWatcher {

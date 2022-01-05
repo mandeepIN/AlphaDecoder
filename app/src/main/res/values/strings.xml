@@ -38,18 +38,20 @@
     <string name="open_app">Open App</string>
     <string name="uninstall_app">Uninstall App</string>
     <string name="change_language">Change Language</string>
-    <string name="hello_i_am_your_assistant">Hello I am your assistant</string>
-    <string name="need_help">Would you like my help with something ?</string>
-    <string name="i_can_help">I can help you with following</string>
+    <string name="hello_i_am_your_assistant">Hello! I am Jugnu</string>
+    <string name="need_help">Your friend and Voice assistant</string>
+    <string name="i_can_help">Things I can do for you :</string>
     <string name="racing_games">Racing Games</string>
     <string name="show_racing_games">Show me Racing Games</string>
-    <string name="similar_apps">Similar Apps</string>
+    <string name="similar_apps">Similar Apps for you</string>
     <string name="rewards_query">What are my rewards ?</string>
     <string name="clean_space">Clean my unused apps</string>
     <string name="great_offers">Show me some great offers</string>
     <string name="pay_bills">Pay Bills</string>
-    <string name="hi_how_can_i_help">Hi , how can I help ?</string>
-
+    <string name="hi_how_can_i_help">How can I help ?</string>
+    <string name="search">Search</string>
+    <string name="explore">Explore</string>
+    <string name="clean_phone">Clean Phone</string>
     <string name="category_suggestion">Here are some suggestions for category</string>
     <string name="cat_finance">Finance</string>
     <string name="cat_games">Games</string>
